@@ -1,0 +1,15 @@
+import rasterio
+import numpy as np
+from rasterio.plot import show
+ab = r"E:\IISC\IISC_NEW\Karnataka\Belagaum\LULC\LULC_9April_18\LC08_L1TP_146049_20180409_20180417_01_T1_B5.tif"
+raster = rasterio.open(ab)
+show(raster)
+array = raster.read()
+stats = []
+for band in array:
+    stats.append({
+            'min' : band.min(),
+            'mean' : band.mean(),
+            'median' : np.median(band),
+            'max' : band.max()})
+print(stats)
