@@ -1,0 +1,9 @@
+import rasterio
+from matplotlib import pyplot
+from rasterio.plot import show_hist
+
+src = rasterio.open("E:\IISC\IISC_NEW\Karnataka\Belagaum\LULC\LULC_9April_18\LC08_L1TP_146049_20180409_20180417_01_T1_B4.tif")
+pyplot.imshow(src.read(1), cmap='gray')
+pyplot.show()
+show_hist(src, bins=50, lw=0.0, stacked=False, alpha=0.3, histtype='stepfilled', title="Histogram")
+
