@@ -1,0 +1,22 @@
+# Import necessary modules
+import geopandas as gpd
+import matplotlib.pyplot as plt
+#import earthpy.plot as ep
+
+# Set filepath
+fp = "E:\\IISC\\IISC_NEW\Karnataka\\New folder\\agro_bel_shapefile\\Agro_belgaum.shp"
+
+# Read file using gpd.read_file()
+data = gpd.read_file(fp)
+
+c = type(data)
+print(c)
+
+print(data.head(2))
+data.plot()
+
+# It is possible to get a specific column by specifying the column name within square brackets []
+print(data['geometry'].head())
+
+
+
